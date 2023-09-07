@@ -1,8 +1,5 @@
-This doc will take you through the steps of getting debian running one the asus k501u
-This directory contains (most of) the files to get debian functioning
-
-This page has some useful tips for getting things to work after a fresh install:
-https://github.com/lshannon/ASUS-K501U-Ubuntu-Set-Up
+This repo contains a list of (most of) the things you will need to get Debian up and running
+and restore it to previous the previous install state
 
 1) Immediately after install, move the files in firmware/ to /lib/firmware
  $ sudo rsync -avrz firmware/ /lib/firmware/

@@ -28,8 +28,6 @@ python-cinfony
 python-rdkit
 python3-setuptools
 rsync
-#duplicity
-#jq
 glances
 unrar
 fail2ban
