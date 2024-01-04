@@ -5,8 +5,9 @@ alias e=' emacs -nw '
 alias glances='glances -1 --fs-free-space'
 alias octave='octave --no-gui -q'
 alias backup='~/scripts/backup.sh'
-alias wgu='wg-quick up peer_skynetjr'
-alias wgd='wg-quick down peer_skynetjr'
+alias wgu='wg-quick up peer_terminator'
+alias wgd='wg-quick down peer_terminator'
+alias klayout='XDG_SESSION_TYPE=x11 klayout -e'
 
 export VISUAL=emacs
 export EDITOR=emacs
