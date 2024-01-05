@@ -2,7 +2,7 @@
 
 #TODO: organize packages to allow user to choose (ie space to select from list like in pro installers)
 
-echo -e "run \n\nsudo sed -i.bak 's/bullseye[^ ]* main$/& contrib non-free/g' /etc/apt/sources.list \n\nto add non-free firmware (ie firmware-realtek)"
+echo -e "run \n\nsudo sed -i.bak 's/bookworm[^ ]* main$/& contrib non-free/g' /etc/apt/sources.list \n\nto add non-free firmware (ie firmware-realtek))"
 
 read -p "Do you wish to update/upgrade apt? " ans1
 if echo "$ans1" | grep -iq "^y" ; then
