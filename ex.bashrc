@@ -12,7 +12,7 @@ alias klayout='XDG_SESSION_TYPE=x11 klayout -e'
 export VISUAL=emacs
 export EDITOR=emacs
 
-export QT_QPA_PLATFORM=wayland
+#export QT_QPA_PLATFORM=wayland
 
 export TMPDIR=/tmp #useful for programs like qe
 
@@ -40,11 +40,16 @@ export TMPDIR=/tmp #useful for programs like qe
 #allows executables in cwd and ~/bin to by run as env_var
 export PATH=$PATH:/opt/:~/scripts/:./:~/.local/bin #:$QE_BIN:$g16root:$CMAKE_BIN:$AMBER_BIN
 
-
 # remove duplicate path entries
 export PATH=$(echo $PATH | awk -F: '
 { for (i = 1; i <= NF; i++) arr[$i]; }
 END { for (i in arr) printf "%s:" , i; printf "\n"; } ')
+
+# Creates a backup of the file passed as parameter with the date and time
+function bak()
+{
+  cp $1 $1_`date +%H:%M:%S_%d-%m-%Y`
+}
 
 #counts things when to ls | wc -1 won't work
 count() {
@@ -126,45 +131,36 @@ for i in {1..254}; do
 done
 }
 
-# Creates a backup of the file passed as parameter with the date and time
-function bak()
-{
-  cp $1 $1_`date +%H:%M:%S_%d-%m-%Y`
-}
-
-# Script to randomly set desktop/gdm background from files in a directory(s) in GNOME3
-function randomwp()
-{
-###### Directories Containing Pictures (to add more folders here, just "/path/to/your/folder")
-arr[0]="$HOME/pictures/"
-#arr[1]="/usr/share/backgrounds"
-# arr[2]=
-# arr[3]=
-# arr[4]=
-# arr[5]=
-# arr[6]=
-# arr[7]=
-# arr[8]=
-# arr[9]=
-# arr[10]=
-###### How many picture folders are there? (currently = 2)
-rand=$[ $RANDOM % 1]
-###### Command to select a random folder
-DIR=`echo ${arr[$rand]}`
-###### Command to select a random file from directory
-# The *.* should select only files (ideally, pictures, if that's all that's inside)
-PIC=$(ls $DIR/*.* | shuf -n1)
-###### Command to set background Image
-gsettings set org.gnome.desktop.background picture-uri "file://$PIC"
-}
-
 #display package command came from
 function cmdpkg() { PACKAGE=$(dpkg -S $(which $1) | cut -d':' -f1); echo "[${PACKAGE}]"; dpkg -s "${PACKAGE}" ;}
 
-randomwp
-
-
-
+## Script to randomly set desktop/gdm background from files in a directory(s) in GNOME3
+#function randomwp()
+#{
+####### Directories Containing Pictures (to add more folders here, just "/path/to/your/folder")
+#arr[0]="$HOME/pictures/"
+##arr[1]="/usr/share/backgrounds"
+## arr[2]=
+## arr[3]=
+## arr[4]=
+## arr[5]=
+## arr[6]=
+## arr[7]=
+## arr[8]=
+## arr[9]=
+## arr[10]=
+####### How many picture folders are there? (currently = 2)
+#rand=$[ $RANDOM % 1]
+####### Command to select a random folder
+#DIR=`echo ${arr[$rand]}`
+####### Command to select a random file from directory
+## The *.* should select only files (ideally, pictures, if that's all that's inside)
+#PIC=$(ls $DIR/*.* | shuf -n1)
+####### Command to set background Image
+#gsettings set org.gnome.desktop.background picture-uri "file://$PIC"
+#}
+#
+#randomwp
 
 
 #################DEFAULTS###################
@@ -282,6 +278,3 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-
-

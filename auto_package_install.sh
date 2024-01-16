@@ -23,11 +23,15 @@ read -p "install the listed packages? " ans2
 if echo "$ans2" | grep -iq "^y" ; then
     echo "installing packages"
     while read -r line ; do
+	echo
+	echo
+	echo "Installing $line"
+	echo
 	sudo apt-get -y install $(echo $line | awk '{ print $1 }')
 	echo "$(echo $line | awk '{ print $1 }') installed"
     done < "package.list"
 else
-    echo "skipping pacakges"
+    echo "skipping packages"
 fi
 
 echo -e "\n"

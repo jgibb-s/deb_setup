@@ -2,13 +2,13 @@
 sed
 awk
 wget
-nmap
-default-jdk 
+#nmap
+#default-jdk 
 emacs 
 git
 #dh-autoreconf
 gfortran 
-dkms
+#dkms
 dpkg
 python
 python-dev
@@ -51,11 +51,11 @@ spice-vdagent
 wireguard
 octave
 liboctave-dev
-gparted
+#gparted
 #netdata
 #hddtemp
-network-manager-openvpn
-network-manager-openvpn-gnome
+#network-manager-openvpn
+#network-manager-openvpn-gnome
 openmpi-bin
 
 # require gui
@@ -64,7 +64,7 @@ eog
 gimp
 inkscape
 libreoffice 
-transmission-gtk
+#transmission-gtk
 vlc 
 texlive-full
 texstudio 
