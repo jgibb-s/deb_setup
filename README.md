@@ -1,3 +1,7 @@
+2add: powertop/tlp
+https://linuxconfig.org/how-to-check-and-tune-power-consumption-with-powertop-on-linux
+https://linuxconfig.org/how-to-optimize-laptop-battery-life-with-tlp-on-linux
+
 This repo contains a list of (most of) the things you will need to get Debian up and running and restore it to previous the previous install state
 
 1) If hardware (such as wifi, bluetooth, etc) not working, move the files in firmware/ to /lib/firmware immediately after install

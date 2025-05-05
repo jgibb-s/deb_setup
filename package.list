@@ -46,7 +46,6 @@ virt-manager
 virt-viewer
 spice-vdagent
 
-
 #Utilities
 wireguard
 octave
@@ -57,6 +56,9 @@ liboctave-dev
 #network-manager-openvpn
 #network-manager-openvpn-gnome
 openmpi-bin
+powertop
+tlp
+tlp-rdw
 
 # require gui
 #gnumeric
